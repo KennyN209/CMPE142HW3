@@ -16,7 +16,7 @@ public:
     bool write();
     bool Free();
     void operator =(pT&);
-    int pID; 
+    int pID;
     int physicalAd;
     int virtualAd;
     bool dirty;
@@ -59,7 +59,8 @@ int main()
     ifstream in_stream;
     in_stream.open("memory.dat");
     
-    while(choice != /* DISABLES CODE */ (1) || choice != 2 || choice != 3)
+    while(choice != /* DISABLES CODE */ (1)
+          || choice != 2 || choice != 3)
     {
         cout<<"Choose a Swap Policy: "<<endl << "1: FIFO" << endl << "2: LRU" << endl << "3: Random" << endl << endl << "Choose your swap placement scheme: ";
         cin >> choice;
@@ -69,14 +70,10 @@ int main()
     }
     while (in_stream >> PID)
     {
-        
-        
         in_stream >> status;
-        
         if (status == 'A' || status == 'W' || status == 'F' || status == 'R')
         {
             in_stream >> vAddress;
-            
         }
         
         
@@ -130,10 +127,8 @@ int main()
                 
             }
             
-            if(SwapAlgorithmYesNo){
-                
-                cout<<"Use the swap algorithm"<<endl;
-                
+            if (SwapAlgorithmYesNo)
+            {
                 if(choice == 1){
                     int LastUsedPage = 0;
                     for(int i = 0; i < 20; i++){
@@ -153,11 +148,11 @@ int main()
                     }
                     PageIndexSwap = pageWithLeastAccessed;
                 }
-
+                
                 if(choice == 3){
                     BA = rand() % 20 + 0;
                 }
-                   
+                
             }
             for (int i = 0; i < 50; i++)
             {
@@ -319,7 +314,7 @@ int main()
                                 }
                                 PageIndexSwap = pageWithLeastAccessed;
                             }
-
+                            
                             if(choice == 3){
                                 PageIndexSwap = rand() % 20 + 0;
                             }
@@ -459,13 +454,8 @@ int main()
                                 }
                             }
                             
-                            if(needSwapForReadAlgo){
-                                
-                                cout<<"need swap policy"<<endl;
-                                
-                                
-                                
-                                
+                            if(needSwapForReadAlgo)
+                            {
                                 
                                 if(choice == 1){
                                     int pageWithLeastAccessed = 0;
@@ -486,7 +476,7 @@ int main()
                                     }
                                     PageIndexSwap = pageWithLeastAccessed;
                                 }
-
+                                
                                 if(choice == 3){
                                     PageIndexSwap = rand() % 20 + 0;
                                 }
@@ -671,31 +661,21 @@ int main()
     }
     
     
-    cout<<"Physical Memory" << endl;
-    cout << "PID\t" << "Virtual Addr\t" << "BA\t" << "Dirty\t" << "Access\t" << endl;
+    cout<<"Swap Placement: " << endl;
+    cout << "PID\t\t" << "Virt. Add.\t\t" << "Physical. Add.\t\t" << "Dirty\t\t" << "Access\t" << endl;
     for (int i = 0; i < 20; i++)
     {
         
-        cout << slide[i].pID << "\t"
-        << slide[i].virtualAd << "\t" << i << "\t\t";
+        cout << slide[i].pID << "\t\t\t"
+        << slide[i].virtualAd << "\t\t\t\t" << i << "\t\t\t\t";
         if (slide[i].dirty == true)
-            cout << "Yes" << "\t" << slide[i].visited << endl;
+            cout << "Yes" << "\t\t\t" << slide[i].visited << endl;
         if (slide[i].dirty == false)
-            cout << "No" << "\t" << slide[i].visited << endl;
+            cout << "No" << "\t\t\t" << slide[i].visited << endl;
         
     }
     
-    cout<<"SWAP SPACE"<<endl;
-    cout << "PID\t" << "Virtual Addr\t" << "Dirty\t" << "Access\t" << endl;
-    for (int i = 0; i < 20; i++)
-    {
-        cout << swapped[i].pID << "\t"
-        << swapped[i].virtualAd << "\t";
-        if (swapped[i].dirty == true)
-            cout << "Yes" << "\t" << slide[i].visited << endl;
-        if (swapped[i].dirty == false)
-            cout << "No" << "\t\t" << slide[i].visited << endl;
-    }
+   
     
 }
 
