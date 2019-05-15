@@ -14,7 +14,7 @@ public:
     int getPID();
     bool isDirty();
     bool write();
-    bool Free();
+    bool free();
     void operator =(pT&);
     int pID;
     int physicalAd;
@@ -25,8 +25,8 @@ public:
     bool isEmpty;
     bool allocated;
     bool isSwapped;
-    friend istream &operator >>(std::istream &in_stream, pT&);
-    friend ostream &operator <<(std::ostream &out_stream, pT&);
+    friend istream &operator >>(istream &in_stream, pT&);
+    friend ostream &operator <<(ostream &out_stream, pT&);
 };
 
 class Process{
@@ -47,11 +47,11 @@ int main()
 {
     int PID = 0;
     int vAddress = 0;
-    char status;
+    char action;
     int accessTimeStamp = 1;
     int BA;
     int choice = 0;
-    int SpaceIndexSwap = 0;
+    int swapIndex = 0;
     int PageIndexSwap = 0;
     int count = 1;
     
@@ -62,7 +62,7 @@ int main()
     while(choice != /* DISABLES CODE */ (1)
           || choice != 2 || choice != 3)
     {
-        cout<<"Choose a Swap Policy: "<<endl << "1: FIFO" << endl << "2: LRU" << endl << "3: Random" << endl << endl << "Choose your swap placement scheme: ";
+        cout<<"Choose a Swap Policy: " << endl << "1: FIFO" << endl << "2: LRU" << endl << "3: Random" << endl << endl << "Choose your swap placement scheme: ";
         cin >> choice;
         if(choice == 1 || choice == 2 || choice == 3)
             break;
@@ -70,14 +70,14 @@ int main()
     }
     while (in_stream >> PID)
     {
-        in_stream >> status;
-        if (status == 'A' || status == 'W' || status == 'F' || status == 'R')
+        in_stream >> action;
+        if (action == 'A' || action == 'W' || action == 'F' || action == 'R')
         {
             in_stream >> vAddress;
         }
         
         
-        if (status == 'C')
+        if (action == 'C')
         {
             int ProcessIndexNew;
             bool TerminatedProcess = false;
@@ -103,10 +103,10 @@ int main()
             
         }
         
-        if (status == 'A')
+        if (action == 'A')
         {
             BA = 0;
-            SpaceIndexSwap = 0;
+            swapIndex = 0;
             bool SwapAlgorithmYesNo = false;
             bool SwapAlgorithmHappenedYesNo = false;
             
@@ -162,21 +162,16 @@ int main()
                     if(SwapAlgorithmHappenedYesNo)
                     {
                         
-                        while (swapped[SpaceIndexSwap].allocated)
+                        while (swapped[swapIndex].allocated)
                         {
-                            SpaceIndexSwap++;
+                            swapIndex++;
                         }
                         
-                        swapped[SpaceIndexSwap].pID =
-                        slide[BA].pID;
-                        swapped[SpaceIndexSwap].virtualAd =
-                        slide[BA].virtualAd;
-                        swapped[SpaceIndexSwap].allocated = true;
-                        swapped[SpaceIndexSwap].dirty =
-                        slide[BA].dirty;
-                        swapped[SpaceIndexSwap].visited =
-                        slide[BA].visited;
-                        
+                        swapped[swapIndex].pID = slide[BA].pID;
+                        swapped[swapIndex].virtualAd = slide[BA].virtualAd;
+                        swapped[swapIndex].allocated = true;
+                        swapped[swapIndex].dirty = slide[BA].dirty;
+                        swapped[swapIndex].visited = slide[BA].visited;
                         for (int processToSwap = 0; processToSwap < 50;
                              processToSwap++)
                         {
@@ -225,10 +220,10 @@ int main()
             
             
         }
-        if (status == 'W')
+        if (action == 'W')
         {
             bool SwapWrittenwithAlgo = true;
-            SpaceIndexSwap = 0;
+            swapIndex = 0;
             int pageFoundInSwap = 0;
             
             
@@ -277,9 +272,9 @@ int main()
                         }
                         
                         
-                        while (swapped[SpaceIndexSwap].allocated && SpaceIndexSwap < 40)
+                        while (swapped[swapIndex].allocated && swapIndex < 40)
                         {
-                            SpaceIndexSwap++;
+                            swapIndex++;
                         }
                         
                         for(PageIndexSwap = 0; PageIndexSwap < 20; PageIndexSwap++){
@@ -324,11 +319,11 @@ int main()
                         }
                         
                         
-                        swapped[SpaceIndexSwap].pID = slide[PageIndexSwap].pID;
-                        swapped[SpaceIndexSwap].physicalAd = slide[PageIndexSwap].physicalAd;
-                        swapped[SpaceIndexSwap].virtualAd = slide[PageIndexSwap].virtualAd;
-                        swapped[SpaceIndexSwap].isSwapped = true;
-                        swapped[SpaceIndexSwap].accum = 0;
+                        swapped[swapIndex].pID = slide[PageIndexSwap].pID;
+                        swapped[swapIndex].physicalAd = slide[PageIndexSwap].physicalAd;
+                        swapped[swapIndex].virtualAd = slide[PageIndexSwap].virtualAd;
+                        swapped[swapIndex].isSwapped = true;
+                        swapped[swapIndex].accum = 0;
                         
                         for(int k = 0; k < 50; k++){
                             if(Processes[k].PID == slide[PageIndexSwap].pID){
@@ -392,7 +387,7 @@ int main()
             }
             
             
-            if (status == 'R')
+            if (action == 'R')
             {
                 
                 
@@ -440,9 +435,9 @@ int main()
                                 if(swapped[pageFoundInSwap].pID == PID && swapped[pageFoundInSwap].virtualAd == vAddress)break;
                             }
                             
-                            while (swapped[SpaceIndexSwap].allocated && SpaceIndexSwap < 40)
+                            while (swapped[swapIndex].allocated && swapIndex < 40)
                             {
-                                SpaceIndexSwap++;
+                                swapIndex++;
                             }
                             
                             
@@ -483,10 +478,10 @@ int main()
                                 
                             }
                             
-                            swapped[SpaceIndexSwap].pID = slide[PageIndexSwap].pID;
-                            swapped[SpaceIndexSwap].physicalAd = slide[PageIndexSwap].physicalAd;
-                            swapped[SpaceIndexSwap].virtualAd = slide[PageIndexSwap].virtualAd;
-                            swapped[SpaceIndexSwap].isSwapped = true;
+                            swapped[swapIndex].pID = slide[PageIndexSwap].pID;
+                            swapped[swapIndex].physicalAd = slide[PageIndexSwap].physicalAd;
+                            swapped[swapIndex].virtualAd = slide[PageIndexSwap].virtualAd;
+                            swapped[swapIndex].isSwapped = true;
                             for(int k = 0; k < 50; k++){
                                 if(Processes[k].PID == slide[PageIndexSwap].pID){
                                     
@@ -543,7 +538,7 @@ int main()
             
         }
         
-        if (status == 'F')
+        if (action == 'F')
         {
             
             for (int i = 0; i < 50; i++)
@@ -614,7 +609,7 @@ int main()
             
         }
         
-        if (status == 'T')
+        if (action == 'T')
         {
             
             for (int i = 0; i < 50; i++)
@@ -662,16 +657,16 @@ int main()
     
     
     cout<<"Swap Placement: " << endl;
-    cout << "PID\t\t" << "Virt. Add.\t\t" << "Physical. Add.\t\t" << "Dirty\t\t" << "Access\t" << endl;
+    cout << "PID\t\t" << "Virt. Add.\t\t" << "Physical. Add.\t" << "Dirty\t\t" << "Access\t" << endl;
     for (int i = 0; i < 20; i++)
     {
         
         cout << slide[i].pID << "\t\t\t"
         << slide[i].virtualAd << "\t\t\t\t" << i << "\t\t\t\t";
         if (slide[i].dirty == true)
-            cout << "Yes" << "\t\t\t" << slide[i].visited << endl;
+            cout << "yes" << "\t\t\t" << slide[i].visited << endl;
         if (slide[i].dirty == false)
-            cout << "No" << "\t\t\t" << slide[i].visited << endl;
+            cout << "no" << "\t\t\t" << slide[i].visited << endl;
         
     }
     
@@ -732,7 +727,7 @@ bool pT::write(){
     dirty = true;
     return dirty;
 }
-bool pT::Free(){
+bool pT::free(){
     allocated = false;
     return allocated;
 }
