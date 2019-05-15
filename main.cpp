@@ -37,8 +37,8 @@ public:
     bool isTerminated;
     pT* pages;
 };
-pT physicalPages[20];
-pT swapSpace[50];
+pT slide[20];
+pT swapped[50];
 Process Processes[50];
 
 //------------------------------------CLASSES-------------------------//
@@ -53,7 +53,7 @@ int main()
     int choice = 0;
     int SpaceIndexSwap = 0;
     int PageIndexSwap = 0;
-    int FIFOcounter = 1;
+    int count = 1;
     
     
     ifstream in_stream;
@@ -61,7 +61,7 @@ int main()
     
     while(choice != /* DISABLES CODE */ (1) || choice != 2 || choice != 3)
     {
-        cout<<"Choose a Swap Policy: "<<endl << "1: Random" << endl << "2: FIFO" << endl << "3: LRU" << endl << endl << "Choice: ";
+        cout<<"Choose a Swap Policy: "<<endl << "1: FIFO" << endl << "2: LRU" << endl << "3: Random" << endl << endl << "Choose your swap placement scheme: ";
         cin >> choice;
         if(choice == 1 || choice == 2 || choice == 3)
             break;
@@ -116,16 +116,16 @@ int main()
             for(BA = 0; BA < 20; BA++)
             {
                 
-                if(!physicalPages[BA].allocated)
+                if(!slide[BA].allocated)
                     break;
-                if(BA == 19 && physicalPages[BA].allocated) SwapAlgorithmHappenedYesNo = true;
+                if(BA == 19 && slide[BA].allocated) SwapAlgorithmHappenedYesNo = true;
                 
             }
             
             if(SwapAlgorithmHappenedYesNo){
                 for(BA = 0; BA < 20; BA++){
-                    if(!physicalPages[BA].dirty) break;
-                    if(BA == 19 && physicalPages[BA].dirty) SwapAlgorithmYesNo = true;
+                    if(!slide[BA].dirty) break;
+                    if(BA == 19 && slide[BA].dirty) SwapAlgorithmYesNo = true;
                 }
                 
             }
@@ -135,31 +135,29 @@ int main()
                 cout<<"Use the swap algorithm"<<endl;
                 
                 if(choice == 1){
-                    BA = rand() % 20 + 0;
-                }
-                
-                if(choice == 2){
                     int LastUsedPage = 0;
                     for(int i = 0; i < 20; i++){
-                        if(physicalPages[i].accum < physicalPages[LastUsedPage].accum){
+                        if(slide[i].accum < slide[LastUsedPage].accum){
                             LastUsedPage = i;
                         }
                     }
                     PageIndexSwap = LastUsedPage;
                 }
                 
-                if(choice == 3){
+                if(choice == 2){
                     int pageWithLeastAccessed = 0;
                     for(int i = 0; i < 20; i++){
-                        if(physicalPages[i].visited < physicalPages[pageWithLeastAccessed].visited){
+                        if(slide[i].visited < slide[pageWithLeastAccessed].visited){
                             pageWithLeastAccessed = i;
                         }
                     }
                     PageIndexSwap = pageWithLeastAccessed;
                 }
-                
-                
-                
+
+                if(choice == 3){
+                    BA = rand() % 20 + 0;
+                }
+                   
             }
             for (int i = 0; i < 50; i++)
             {
@@ -169,28 +167,27 @@ int main()
                     if(SwapAlgorithmHappenedYesNo)
                     {
                         
-                        while (swapSpace[SpaceIndexSwap].allocated)
+                        while (swapped[SpaceIndexSwap].allocated)
                         {
                             SpaceIndexSwap++;
                         }
                         
-                        swapSpace[SpaceIndexSwap].pID =
-                        physicalPages[BA].pID;
-                        swapSpace[SpaceIndexSwap].virtualAd =
-                        physicalPages[BA].virtualAd;
-                        swapSpace[SpaceIndexSwap].allocated = true;
-                        swapSpace[SpaceIndexSwap].dirty =
-                        physicalPages[BA].dirty;
-                        swapSpace[SpaceIndexSwap].visited =
-                        physicalPages[BA].visited;
+                        swapped[SpaceIndexSwap].pID =
+                        slide[BA].pID;
+                        swapped[SpaceIndexSwap].virtualAd =
+                        slide[BA].virtualAd;
+                        swapped[SpaceIndexSwap].allocated = true;
+                        swapped[SpaceIndexSwap].dirty =
+                        slide[BA].dirty;
+                        swapped[SpaceIndexSwap].visited =
+                        slide[BA].visited;
                         
                         for (int processToSwap = 0; processToSwap < 50;
                              processToSwap++)
                         {
-                            if (Processes[processToSwap].PID
-                                == physicalPages[BA].pID)
+                            if (Processes[processToSwap].PID== slide[BA].pID)
                             {
-                                Processes[processToSwap].pages[physicalPages[BA].virtualAd].isSwapped =
+                                Processes[processToSwap].pages[slide[BA].virtualAd].isSwapped =
                                 true;
                                 break;
                             }
@@ -204,8 +201,8 @@ int main()
                         Processes[i].pages[vAddress].virtualAd = vAddress;
                         Processes[i].pages[vAddress].physicalAd = BA;
                         Processes[i].pages[vAddress].allocated = true;
-                        Processes[i].pages[vAddress].accum = FIFOcounter;
-                        FIFOcounter++;
+                        Processes[i].pages[vAddress].accum = count;
+                        count++;
                         
                     }
                     
@@ -216,16 +213,16 @@ int main()
                         Processes[i].pages[vAddress].virtualAd = vAddress;
                         Processes[i].pages[vAddress].physicalAd = BA;
                         Processes[i].pages[vAddress].allocated = true;
-                        Processes[i].pages[vAddress].accum = FIFOcounter;
-                        FIFOcounter++;
+                        Processes[i].pages[vAddress].accum = count;
+                        count++;
                     }
                     
-                    physicalPages[BA].pID = PID;
-                    physicalPages[BA].virtualAd = vAddress;
-                    physicalPages[BA].physicalAd = BA;
-                    physicalPages[BA].allocated = true;
-                    physicalPages[BA].accum = FIFOcounter;
-                    FIFOcounter++;
+                    slide[BA].pID = PID;
+                    slide[BA].virtualAd = vAddress;
+                    slide[BA].physicalAd = BA;
+                    slide[BA].allocated = true;
+                    slide[BA].accum = count;
+                    count++;
                     break;
                 }
             }
@@ -250,23 +247,23 @@ int main()
                         
                         for(int killIndex = 0; killIndex < 20; killIndex++){
                             
-                            if(physicalPages[killIndex].pID == PID){
-                                physicalPages[killIndex].allocated = false;
-                                physicalPages[killIndex].virtualAd = 0;
-                                physicalPages[killIndex].dirty = false;
-                                physicalPages[killIndex].visited = 0;
-                                physicalPages[killIndex].pID = 0;
+                            if(slide[killIndex].pID == PID){
+                                slide[killIndex].allocated = false;
+                                slide[killIndex].virtualAd = 0;
+                                slide[killIndex].dirty = false;
+                                slide[killIndex].visited = 0;
+                                slide[killIndex].pID = 0;
                             }
                         }
                         
                         for(int killSwapIndex = 0; killSwapIndex < 40; killSwapIndex++){
                             
-                            if(swapSpace[killSwapIndex].pID == PID){
-                                swapSpace[killSwapIndex].allocated = false;
-                                swapSpace[killSwapIndex].virtualAd = 0;
-                                swapSpace[killSwapIndex].dirty = false;
-                                swapSpace[killSwapIndex].visited = 0;
-                                swapSpace[killSwapIndex].pID = 0;
+                            if(swapped[killSwapIndex].pID == PID){
+                                swapped[killSwapIndex].allocated = false;
+                                swapped[killSwapIndex].virtualAd = 0;
+                                swapped[killSwapIndex].dirty = false;
+                                swapped[killSwapIndex].visited = 0;
+                                swapped[killSwapIndex].pID = 0;
                             }
                         }
                         
@@ -281,17 +278,17 @@ int main()
                     else if(Processes[i].pages[vAddress].allocated && Processes[i].pages[vAddress].isSwapped){
                         
                         for(pageFoundInSwap = 0; pageFoundInSwap < 40; pageFoundInSwap++){
-                            if(swapSpace[pageFoundInSwap].pID == PID && swapSpace[pageFoundInSwap].virtualAd == vAddress)break;
+                            if(swapped[pageFoundInSwap].pID == PID && swapped[pageFoundInSwap].virtualAd == vAddress)break;
                         }
                         
                         
-                        while (swapSpace[SpaceIndexSwap].allocated && SpaceIndexSwap < 40)
+                        while (swapped[SpaceIndexSwap].allocated && SpaceIndexSwap < 40)
                         {
                             SpaceIndexSwap++;
                         }
                         
                         for(PageIndexSwap = 0; PageIndexSwap < 20; PageIndexSwap++){
-                            if(!physicalPages[PageIndexSwap].dirty){
+                            if(!slide[PageIndexSwap].dirty){
                                 SwapWrittenwithAlgo = false;
                                 
                                 break;
@@ -304,27 +301,27 @@ int main()
                             
                             
                             if(choice == 1){
-                                PageIndexSwap = rand() % 20 + 0;
+                                int pageWithLeastAccessed = 0;
+                                for(int i = 0; i < 20; i++){
+                                    if(slide[i].visited < slide[pageWithLeastAccessed].visited){
+                                        pageWithLeastAccessed = i;
+                                    }
+                                }
+                                PageIndexSwap = pageWithLeastAccessed;
                             }
                             
                             if(choice == 2){
                                 int pageWithLeastAccessed = 0;
                                 for(int i = 0; i < 20; i++){
-                                    if(physicalPages[i].visited < physicalPages[pageWithLeastAccessed].visited){
+                                    if(slide[i].visited < slide[pageWithLeastAccessed].visited){
                                         pageWithLeastAccessed = i;
                                     }
                                 }
                                 PageIndexSwap = pageWithLeastAccessed;
                             }
-                            
+
                             if(choice == 3){
-                                int pageWithLeastAccessed = 0;
-                                for(int i = 0; i < 20; i++){
-                                    if(physicalPages[i].visited < physicalPages[pageWithLeastAccessed].visited){
-                                        pageWithLeastAccessed = i;
-                                    }
-                                }
-                                PageIndexSwap = pageWithLeastAccessed;
+                                PageIndexSwap = rand() % 20 + 0;
                             }
                             
                             
@@ -332,19 +329,17 @@ int main()
                         }
                         
                         
-                        
-                        
-                        swapSpace[SpaceIndexSwap].pID = physicalPages[PageIndexSwap].pID;
-                        swapSpace[SpaceIndexSwap].physicalAd = physicalPages[PageIndexSwap].physicalAd;
-                        swapSpace[SpaceIndexSwap].virtualAd = physicalPages[PageIndexSwap].virtualAd;
-                        swapSpace[SpaceIndexSwap].isSwapped = true;
-                        swapSpace[SpaceIndexSwap].accum = 0;
+                        swapped[SpaceIndexSwap].pID = slide[PageIndexSwap].pID;
+                        swapped[SpaceIndexSwap].physicalAd = slide[PageIndexSwap].physicalAd;
+                        swapped[SpaceIndexSwap].virtualAd = slide[PageIndexSwap].virtualAd;
+                        swapped[SpaceIndexSwap].isSwapped = true;
+                        swapped[SpaceIndexSwap].accum = 0;
                         
                         for(int k = 0; k < 50; k++){
-                            if(Processes[k].PID == physicalPages[PageIndexSwap].pID){
+                            if(Processes[k].PID == slide[PageIndexSwap].pID){
                                 
-                                if(Processes[k].pages[physicalPages[PageIndexSwap].virtualAd].virtualAd == physicalPages[PageIndexSwap].virtualAd){
-                                    Processes[k].pages[physicalPages[PageIndexSwap].virtualAd].virtualAd = true;
+                                if(Processes[k].pages[slide[PageIndexSwap].virtualAd].virtualAd == slide[PageIndexSwap].virtualAd){
+                                    Processes[k].pages[slide[PageIndexSwap].virtualAd].virtualAd = true;
                                     break;
                                     
                                 }
@@ -354,20 +349,20 @@ int main()
                         
                         
                         
-                        physicalPages[PageIndexSwap].dirty = true;
-                        physicalPages[PageIndexSwap].pID = swapSpace[pageFoundInSwap].pID;
-                        physicalPages[PageIndexSwap].isSwapped = false;
-                        physicalPages[PageIndexSwap].allocated = true;
-                        physicalPages[PageIndexSwap].physicalAd = swapSpace[pageFoundInSwap].physicalAd;
-                        physicalPages[PageIndexSwap].virtualAd = swapSpace[pageFoundInSwap].virtualAd;
-                        physicalPages[PageIndexSwap].accum = FIFOcounter;
+                        slide[PageIndexSwap].dirty = true;
+                        slide[PageIndexSwap].pID = swapped[pageFoundInSwap].pID;
+                        slide[PageIndexSwap].isSwapped = false;
+                        slide[PageIndexSwap].allocated = true;
+                        slide[PageIndexSwap].physicalAd = swapped[pageFoundInSwap].physicalAd;
+                        slide[PageIndexSwap].virtualAd = swapped[pageFoundInSwap].virtualAd;
+                        slide[PageIndexSwap].accum = count;
                         
                         
                         
                         for(int i = 0; i < 50; i++){
-                            if(Processes[i].PID == swapSpace[pageFoundInSwap].pID){
+                            if(Processes[i].PID == swapped[pageFoundInSwap].pID){
                                 for(int j = 0; j < 100; j++){
-                                    if(Processes[i].pages[j].virtualAd == swapSpace[pageFoundInSwap].virtualAd){
+                                    if(Processes[i].pages[j].virtualAd == swapped[pageFoundInSwap].virtualAd){
                                         Processes[i].pages[j].isSwapped = false;
                                         Processes[i].pages[j].physicalAd = PageIndexSwap;
                                         break;
@@ -376,24 +371,24 @@ int main()
                             }
                             
                         }
-                        FIFOcounter++;
+                        count++;
                         
                         
                         
-                        swapSpace[pageFoundInSwap].allocated = false;
-                        swapSpace[pageFoundInSwap].virtualAd = 0;
-                        swapSpace[pageFoundInSwap].dirty = false;
-                        swapSpace[pageFoundInSwap].visited = 0;
-                        swapSpace[pageFoundInSwap].pID = 0;
+                        swapped[pageFoundInSwap].allocated = false;
+                        swapped[pageFoundInSwap].virtualAd = 0;
+                        swapped[pageFoundInSwap].dirty = false;
+                        swapped[pageFoundInSwap].visited = 0;
+                        swapped[pageFoundInSwap].pID = 0;
                         
                     }
                     
                     
                     else{
                         Processes[i].pages[vAddress].dirty = true;
-                        physicalPages[Processes[i].pages[vAddress].physicalAd].dirty =
+                        slide[Processes[i].pages[vAddress].physicalAd].dirty =
                         true;
-                        physicalPages[Processes[i].pages[vAddress].physicalAd].visited =
+                        slide[Processes[i].pages[vAddress].physicalAd].visited =
                         accessTimeStamp;
                         accessTimeStamp++;
                         break;
@@ -418,22 +413,22 @@ int main()
                             
                             for(int killIndex = 0; killIndex < 20; killIndex++){
                                 
-                                if (physicalPages[killIndex].pID == PID){
-                                    physicalPages[killIndex].allocated = false;
-                                    physicalPages[killIndex].virtualAd = 0;
-                                    physicalPages[killIndex].dirty = false;
-                                    physicalPages[killIndex].visited = 0;
-                                    physicalPages[killIndex].pID = 0;
+                                if (slide[killIndex].pID == PID){
+                                    slide[killIndex].allocated = false;
+                                    slide[killIndex].virtualAd = 0;
+                                    slide[killIndex].dirty = false;
+                                    slide[killIndex].visited = 0;
+                                    slide[killIndex].pID = 0;
                                 }
                             }
                             for(int killSwapIndex = 0; killSwapIndex < 40; killSwapIndex++){
                                 
-                                if(swapSpace[killSwapIndex].pID == PID){
-                                    swapSpace[killSwapIndex].allocated = false;
-                                    swapSpace[killSwapIndex].virtualAd = 0;
-                                    swapSpace[killSwapIndex].dirty = false;
-                                    swapSpace[killSwapIndex].visited = 0;
-                                    swapSpace[killSwapIndex].pID = 0;
+                                if(swapped[killSwapIndex].pID == PID){
+                                    swapped[killSwapIndex].allocated = false;
+                                    swapped[killSwapIndex].virtualAd = 0;
+                                    swapped[killSwapIndex].dirty = false;
+                                    swapped[killSwapIndex].visited = 0;
+                                    swapped[killSwapIndex].pID = 0;
                                 }
                             }
                             
@@ -447,17 +442,17 @@ int main()
                         else if(Processes[i].pages[vAddress].allocated && Processes[i].pages[vAddress].isSwapped){
                             
                             for(pageFoundInSwap = 0; pageFoundInSwap < 40; pageFoundInSwap++){
-                                if(swapSpace[pageFoundInSwap].pID == PID && swapSpace[pageFoundInSwap].virtualAd == vAddress)break;
+                                if(swapped[pageFoundInSwap].pID == PID && swapped[pageFoundInSwap].virtualAd == vAddress)break;
                             }
                             
-                            while (swapSpace[SpaceIndexSwap].allocated && SpaceIndexSwap < 40)
+                            while (swapped[SpaceIndexSwap].allocated && SpaceIndexSwap < 40)
                             {
                                 SpaceIndexSwap++;
                             }
                             
                             
                             for(int swapPageIndex = 0; swapPageIndex < 20; swapPageIndex++){
-                                if(!physicalPages[swapPageIndex].dirty){
+                                if(!slide[swapPageIndex].dirty){
                                     needSwapForReadAlgo = false;
                                     
                                     break;
@@ -471,41 +466,42 @@ int main()
                                 
                                 
                                 
-                                if(choice == 1){
-                                    PageIndexSwap = rand() % 20 + 0;
-                                }
                                 
-                                if(choice == 2){
+                                if(choice == 1){
                                     int pageWithLeastAccessed = 0;
                                     for(int i = 0; i < 20; i++){
-                                        if(physicalPages[i].visited < physicalPages[pageWithLeastAccessed].visited){
+                                        if(slide[i].visited < slide[pageWithLeastAccessed].visited){
                                             pageWithLeastAccessed = i;
                                         }
                                     }
                                     PageIndexSwap = pageWithLeastAccessed;
                                 }
                                 //LRU
-                                if(choice== 3){
+                                if(choice== 2){
                                     int pageWithLeastAccessed = 0;
                                     for(int i = 0; i < 20; i++){
-                                        if(physicalPages[i].visited < physicalPages[pageWithLeastAccessed].visited){
+                                        if(slide[i].visited < slide[pageWithLeastAccessed].visited){
                                             pageWithLeastAccessed = i;
                                         }
                                     }
                                     PageIndexSwap = pageWithLeastAccessed;
                                 }
+
+                                if(choice == 3){
+                                    PageIndexSwap = rand() % 20 + 0;
+                                }
                                 
                             }
                             
-                            swapSpace[SpaceIndexSwap].pID = physicalPages[PageIndexSwap].pID;
-                            swapSpace[SpaceIndexSwap].physicalAd = physicalPages[PageIndexSwap].physicalAd;
-                            swapSpace[SpaceIndexSwap].virtualAd = physicalPages[PageIndexSwap].virtualAd;
-                            swapSpace[SpaceIndexSwap].isSwapped = true;
+                            swapped[SpaceIndexSwap].pID = slide[PageIndexSwap].pID;
+                            swapped[SpaceIndexSwap].physicalAd = slide[PageIndexSwap].physicalAd;
+                            swapped[SpaceIndexSwap].virtualAd = slide[PageIndexSwap].virtualAd;
+                            swapped[SpaceIndexSwap].isSwapped = true;
                             for(int k = 0; k < 50; k++){
-                                if(Processes[k].PID == physicalPages[PageIndexSwap].pID){
+                                if(Processes[k].PID == slide[PageIndexSwap].pID){
                                     
-                                    if(Processes[k].pages[physicalPages[PageIndexSwap].virtualAd].virtualAd == physicalPages[PageIndexSwap].virtualAd){
-                                        Processes[k].pages[physicalPages[PageIndexSwap].virtualAd].virtualAd = true;
+                                    if(Processes[k].pages[slide[PageIndexSwap].virtualAd].virtualAd == slide[PageIndexSwap].virtualAd){
+                                        Processes[k].pages[slide[PageIndexSwap].virtualAd].virtualAd = true;
                                         break;
                                         
                                     }
@@ -513,16 +509,16 @@ int main()
                                 
                             }
                             
-                            physicalPages[PageIndexSwap].pID = swapSpace[pageFoundInSwap].pID;
-                            physicalPages[PageIndexSwap].isSwapped = false;
-                            physicalPages[PageIndexSwap].allocated = true;
-                            physicalPages[PageIndexSwap].physicalAd = swapSpace[pageFoundInSwap].physicalAd;
-                            physicalPages[PageIndexSwap].virtualAd = swapSpace[pageFoundInSwap].virtualAd;
-                            physicalPages[PageIndexSwap].accum = FIFOcounter;
+                            slide[PageIndexSwap].pID = swapped[pageFoundInSwap].pID;
+                            slide[PageIndexSwap].isSwapped = false;
+                            slide[PageIndexSwap].allocated = true;
+                            slide[PageIndexSwap].physicalAd = swapped[pageFoundInSwap].physicalAd;
+                            slide[PageIndexSwap].virtualAd = swapped[pageFoundInSwap].virtualAd;
+                            slide[PageIndexSwap].accum = count;
                             for(int i = 0; i < 50; i++){
-                                if(Processes[i].PID == swapSpace[pageFoundInSwap].pID){
+                                if(Processes[i].PID == swapped[pageFoundInSwap].pID){
                                     for(int j = 0; j < 100; j++){
-                                        if(Processes[i].pages[j].virtualAd == swapSpace[pageFoundInSwap].virtualAd){
+                                        if(Processes[i].pages[j].virtualAd == swapped[pageFoundInSwap].virtualAd){
                                             Processes[i].pages[j].isSwapped = false;
                                             Processes[i].pages[j].physicalAd = PageIndexSwap;
                                             break;
@@ -531,20 +527,20 @@ int main()
                                 }
                                 
                             }
-                            FIFOcounter++;
+                            count++;
                             
                             
                             
-                            swapSpace[pageFoundInSwap].allocated = false;
-                            swapSpace[pageFoundInSwap].virtualAd = 0;
-                            swapSpace[pageFoundInSwap].dirty = false;
-                            swapSpace[pageFoundInSwap].visited = 0;
-                            swapSpace[pageFoundInSwap].pID = 0;
+                            swapped[pageFoundInSwap].allocated = false;
+                            swapped[pageFoundInSwap].virtualAd = 0;
+                            swapped[pageFoundInSwap].dirty = false;
+                            swapped[pageFoundInSwap].visited = 0;
+                            swapped[pageFoundInSwap].pID = 0;
                             
                         }
                         else{
                             Processes[i].pages[vAddress].visited = accessTimeStamp;
-                            physicalPages[Processes[i].pages[vAddress].physicalAd].visited =
+                            slide[Processes[i].pages[vAddress].physicalAd].visited =
                             accessTimeStamp;
                             accessTimeStamp++;
                             break;
@@ -567,15 +563,15 @@ int main()
                 {
                     Processes[i].pages[vAddress].allocated = false;
                     Processes[i].pages[vAddress].isEmpty = true;
-                    physicalPages[Processes[i].pages[vAddress].physicalAd].allocated =
+                    slide[Processes[i].pages[vAddress].physicalAd].allocated =
                     false;
-                    physicalPages[Processes[i].pages[vAddress].physicalAd].virtualAd =
+                    slide[Processes[i].pages[vAddress].physicalAd].virtualAd =
                     0;
-                    physicalPages[Processes[i].pages[vAddress].physicalAd].dirty =
+                    slide[Processes[i].pages[vAddress].physicalAd].dirty =
                     false;
-                    physicalPages[Processes[i].pages[vAddress].physicalAd].visited =
+                    slide[Processes[i].pages[vAddress].physicalAd].visited =
                     0;
-                    physicalPages[Processes[i].pages[vAddress].physicalAd].pID =
+                    slide[Processes[i].pages[vAddress].physicalAd].pID =
                     0;
                     
                     break;
@@ -586,22 +582,22 @@ int main()
                     
                     for (int killIndex = 0; killIndex < 20; killIndex++){
                         
-                        if (physicalPages[killIndex].pID == PID){
-                            physicalPages[killIndex].allocated = false;
-                            physicalPages[killIndex].virtualAd = 0;
-                            physicalPages[killIndex].dirty = false;
-                            physicalPages[killIndex].visited = 0;
-                            physicalPages[killIndex].pID = 0;
+                        if (slide[killIndex].pID == PID){
+                            slide[killIndex].allocated = false;
+                            slide[killIndex].virtualAd = 0;
+                            slide[killIndex].dirty = false;
+                            slide[killIndex].visited = 0;
+                            slide[killIndex].pID = 0;
                         }
                     }
                     for(int killSwapIndex = 0; killSwapIndex < 40; killSwapIndex++){
                         
-                        if(swapSpace[killSwapIndex].pID == PID){
-                            swapSpace[killSwapIndex].allocated = false;
-                            swapSpace[killSwapIndex].virtualAd = 0;
-                            swapSpace[killSwapIndex].dirty = false;
-                            swapSpace[killSwapIndex].visited = 0;
-                            swapSpace[killSwapIndex].pID = 0;
+                        if(swapped[killSwapIndex].pID == PID){
+                            swapped[killSwapIndex].allocated = false;
+                            swapped[killSwapIndex].virtualAd = 0;
+                            swapped[killSwapIndex].dirty = false;
+                            swapped[killSwapIndex].visited = 0;
+                            swapped[killSwapIndex].pID = 0;
                         }
                     }
                     
@@ -614,13 +610,13 @@ int main()
             }
             
             for(int freeSwap = 0; freeSwap < 40; freeSwap++){
-                if(swapSpace[freeSwap].pID==PID){
-                    swapSpace[freeSwap].allocated = false;
-                    swapSpace[freeSwap].isEmpty = true;
-                    swapSpace[freeSwap].visited = 0;
-                    swapSpace[freeSwap].pID = 0;
-                    swapSpace[freeSwap].virtualAd = 0;
-                    swapSpace[freeSwap].physicalAd = 0;
+                if(swapped[freeSwap].pID==PID){
+                    swapped[freeSwap].allocated = false;
+                    swapped[freeSwap].isEmpty = true;
+                    swapped[freeSwap].visited = 0;
+                    swapped[freeSwap].pID = 0;
+                    swapped[freeSwap].virtualAd = 0;
+                    swapped[freeSwap].physicalAd = 0;
                     break;
                 }
                 
@@ -648,25 +644,25 @@ int main()
             
             for (int i = 0; i < 20; i++){
                 
-                if (physicalPages[i].pID == PID)
+                if (slide[i].pID == PID)
                 {
-                    physicalPages[i].allocated = false;
-                    physicalPages[i].virtualAd = 0;
-                    physicalPages[i].dirty = false;
-                    physicalPages[i].visited = 0;
-                    physicalPages[i].pID = 0;
+                    slide[i].allocated = false;
+                    slide[i].virtualAd = 0;
+                    slide[i].dirty = false;
+                    slide[i].visited = 0;
+                    slide[i].pID = 0;
                     
                 }
             }
             
             for(int i = 0; i < 40; i++){
-                if(swapSpace[i].pID == PID){
+                if(swapped[i].pID == PID){
                     
-                    swapSpace[i].allocated = false;
-                    swapSpace[i].virtualAd = 0;
-                    swapSpace[i].dirty = false;
-                    swapSpace[i].visited = 0;
-                    swapSpace[i].pID = 0;
+                    swapped[i].allocated = false;
+                    swapped[i].virtualAd = 0;
+                    swapped[i].dirty = false;
+                    swapped[i].visited = 0;
+                    swapped[i].pID = 0;
                     
                 }
             }
@@ -676,29 +672,29 @@ int main()
     
     
     cout<<"Physical Memory" << endl;
-    cout << "PID\t" << "VA\t" << "BA\t" << "Dirty\t" << "Access\t" << endl;
+    cout << "PID\t" << "Virtual Addr\t" << "BA\t" << "Dirty\t" << "Access\t" << endl;
     for (int i = 0; i < 20; i++)
     {
         
-        cout << physicalPages[i].pID << "\t"
-        << physicalPages[i].virtualAd << "\t" << i << "\t\t";
-        if (physicalPages[i].dirty == true)
-            cout << "Yes" << "\t" << physicalPages[i].visited << endl;
-        if (physicalPages[i].dirty == false)
-            cout << "No" << "\t" << physicalPages[i].visited << endl;
+        cout << slide[i].pID << "\t"
+        << slide[i].virtualAd << "\t" << i << "\t\t";
+        if (slide[i].dirty == true)
+            cout << "Yes" << "\t" << slide[i].visited << endl;
+        if (slide[i].dirty == false)
+            cout << "No" << "\t" << slide[i].visited << endl;
         
     }
     
     cout<<"SWAP SPACE"<<endl;
-    cout << "PID\t" << "VA\t" << "Dirty\t" << "Access\t" << endl;
+    cout << "PID\t" << "Virtual Addr\t" << "Dirty\t" << "Access\t" << endl;
     for (int i = 0; i < 20; i++)
     {
-        cout << swapSpace[i].pID << "\t"
-        << swapSpace[i].virtualAd << "\t";
-        if (swapSpace[i].dirty == true)
-            cout << "Yes" << "\t" << physicalPages[i].visited << endl;
-        if (swapSpace[i].dirty == false)
-            cout << "No" << "\t\t" << physicalPages[i].visited << endl;
+        cout << swapped[i].pID << "\t"
+        << swapped[i].virtualAd << "\t";
+        if (swapped[i].dirty == true)
+            cout << "Yes" << "\t" << slide[i].visited << endl;
+        if (swapped[i].dirty == false)
+            cout << "No" << "\t\t" << slide[i].visited << endl;
     }
     
 }
