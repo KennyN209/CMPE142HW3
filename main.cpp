@@ -14,7 +14,7 @@ public:
     int getPID();
     bool isDirty();
     bool write();
-    bool setFree();
+    bool Free();
     void operator =(pT&);
     int pID; 
     int physicalAd;
@@ -45,12 +45,12 @@ Process Processes[50];
 
 int main()
 {
-    
-    int PID, VA = 0;
+    int PID = 0;
+    int vAddress = 0;
     char status;
     int accessTimeStamp = 1;
     int BA;
-    int swapRules = 0;
+    int choice = 0;
     int SpaceIndexSwap = 0;
     int PageIndexSwap = 0;
     int FIFOcounter = 1;
@@ -59,10 +59,11 @@ int main()
     ifstream in_stream;
     in_stream.open("memory.dat");
     
-    while(swapRules != /* DISABLES CODE */ (1) || swapRules != 2 || swapRules != 3){
-        cout<<"Select one of the following: "<<endl << "1 for Random" << endl << "2 for FIFO" << endl << "3 for LRU" << endl;
-        cin >> swapRules;
-        if(swapRules == 1 || swapRules == 2 || swapRules == 3)
+    while(choice != /* DISABLES CODE */ (1) || choice != 2 || choice != 3)
+    {
+        cout<<"Choose a Swap Policy: "<<endl << "1: Random" << endl << "2: FIFO" << endl << "3: LRU" << endl << endl << "Choice: ";
+        cin >> choice;
+        if(choice == 1 || choice == 2 || choice == 3)
             break;
         
     }
@@ -74,7 +75,7 @@ int main()
         
         if (status == 'A' || status == 'W' || status == 'F' || status == 'R')
         {
-            in_stream >> VA;
+            in_stream >> vAddress;
             
         }
         
@@ -133,11 +134,11 @@ int main()
                 
                 cout<<"Use the swap algorithm"<<endl;
                 
-                if(swapRules == 1){
+                if(choice == 1){
                     BA = rand() % 20 + 0;
                 }
                 
-                if(swapRules == 2){
+                if(choice == 2){
                     int LastUsedPage = 0;
                     for(int i = 0; i < 20; i++){
                         if(physicalPages[i].accum < physicalPages[LastUsedPage].accum){
@@ -147,7 +148,7 @@ int main()
                     PageIndexSwap = LastUsedPage;
                 }
                 
-                if(swapRules == 3){
+                if(choice == 3){
                     int pageWithLeastAccessed = 0;
                     for(int i = 0; i < 20; i++){
                         if(physicalPages[i].visited < physicalPages[pageWithLeastAccessed].visited){
@@ -200,10 +201,10 @@ int main()
                     if (Processes[i].pages == NULL)
                     {
                         Processes[i].pages = new pT[1000];
-                        Processes[i].pages[VA].virtualAd = VA;
-                        Processes[i].pages[VA].physicalAd = BA;
-                        Processes[i].pages[VA].allocated = true;
-                        Processes[i].pages[VA].accum = FIFOcounter;
+                        Processes[i].pages[vAddress].virtualAd = vAddress;
+                        Processes[i].pages[vAddress].physicalAd = BA;
+                        Processes[i].pages[vAddress].allocated = true;
+                        Processes[i].pages[vAddress].accum = FIFOcounter;
                         FIFOcounter++;
                         
                     }
@@ -212,15 +213,15 @@ int main()
                     else
                     {
                         
-                        Processes[i].pages[VA].virtualAd = VA;
-                        Processes[i].pages[VA].physicalAd = BA;
-                        Processes[i].pages[VA].allocated = true;
-                        Processes[i].pages[VA].accum = FIFOcounter;
+                        Processes[i].pages[vAddress].virtualAd = vAddress;
+                        Processes[i].pages[vAddress].physicalAd = BA;
+                        Processes[i].pages[vAddress].allocated = true;
+                        Processes[i].pages[vAddress].accum = FIFOcounter;
                         FIFOcounter++;
                     }
                     
                     physicalPages[BA].pID = PID;
-                    physicalPages[BA].virtualAd = VA;
+                    physicalPages[BA].virtualAd = vAddress;
                     physicalPages[BA].physicalAd = BA;
                     physicalPages[BA].allocated = true;
                     physicalPages[BA].accum = FIFOcounter;
@@ -244,7 +245,7 @@ int main()
             {
                 if(Processes[i].PID == PID){
                     
-                    if(!Processes[i].pages[VA].allocated){
+                    if(!Processes[i].pages[vAddress].allocated){
                         
                         
                         for(int killIndex = 0; killIndex < 20; killIndex++){
@@ -277,10 +278,10 @@ int main()
                     
                     
                     
-                    else if(Processes[i].pages[VA].allocated && Processes[i].pages[VA].isSwapped){
+                    else if(Processes[i].pages[vAddress].allocated && Processes[i].pages[vAddress].isSwapped){
                         
                         for(pageFoundInSwap = 0; pageFoundInSwap < 40; pageFoundInSwap++){
-                            if(swapSpace[pageFoundInSwap].pID == PID && swapSpace[pageFoundInSwap].virtualAd == VA)break;
+                            if(swapSpace[pageFoundInSwap].pID == PID && swapSpace[pageFoundInSwap].virtualAd == vAddress)break;
                         }
                         
                         
@@ -302,11 +303,11 @@ int main()
                             cout<<"Swap Rules are needed"<<endl;
                             
                             
-                            if(swapRules == 1){
+                            if(choice == 1){
                                 PageIndexSwap = rand() % 20 + 0;
                             }
                             
-                            if(swapRules == 2){
+                            if(choice == 2){
                                 int pageWithLeastAccessed = 0;
                                 for(int i = 0; i < 20; i++){
                                     if(physicalPages[i].visited < physicalPages[pageWithLeastAccessed].visited){
@@ -316,7 +317,7 @@ int main()
                                 PageIndexSwap = pageWithLeastAccessed;
                             }
                             
-                            if(swapRules == 3){
+                            if(choice == 3){
                                 int pageWithLeastAccessed = 0;
                                 for(int i = 0; i < 20; i++){
                                     if(physicalPages[i].visited < physicalPages[pageWithLeastAccessed].visited){
@@ -389,10 +390,10 @@ int main()
                     
                     
                     else{
-                        Processes[i].pages[VA].dirty = true;
-                        physicalPages[Processes[i].pages[VA].physicalAd].dirty =
+                        Processes[i].pages[vAddress].dirty = true;
+                        physicalPages[Processes[i].pages[vAddress].physicalAd].dirty =
                         true;
-                        physicalPages[Processes[i].pages[VA].physicalAd].visited =
+                        physicalPages[Processes[i].pages[vAddress].physicalAd].visited =
                         accessTimeStamp;
                         accessTimeStamp++;
                         break;
@@ -413,7 +414,7 @@ int main()
                 for (int i = 0; i < 50; i++)
                 {
                     if(Processes[i].PID == PID){
-                        if(!Processes[i].pages[VA].allocated){
+                        if(!Processes[i].pages[vAddress].allocated){
                             
                             for(int killIndex = 0; killIndex < 20; killIndex++){
                                 
@@ -443,10 +444,10 @@ int main()
                         }
                         
                         
-                        else if(Processes[i].pages[VA].allocated && Processes[i].pages[VA].isSwapped){
+                        else if(Processes[i].pages[vAddress].allocated && Processes[i].pages[vAddress].isSwapped){
                             
                             for(pageFoundInSwap = 0; pageFoundInSwap < 40; pageFoundInSwap++){
-                                if(swapSpace[pageFoundInSwap].pID == PID && swapSpace[pageFoundInSwap].virtualAd == VA)break;
+                                if(swapSpace[pageFoundInSwap].pID == PID && swapSpace[pageFoundInSwap].virtualAd == vAddress)break;
                             }
                             
                             while (swapSpace[SpaceIndexSwap].allocated && SpaceIndexSwap < 40)
@@ -470,11 +471,11 @@ int main()
                                 
                                 
                                 
-                                if(swapRules == 1){
+                                if(choice == 1){
                                     PageIndexSwap = rand() % 20 + 0;
                                 }
                                 
-                                if(swapRules == 2){
+                                if(choice == 2){
                                     int pageWithLeastAccessed = 0;
                                     for(int i = 0; i < 20; i++){
                                         if(physicalPages[i].visited < physicalPages[pageWithLeastAccessed].visited){
@@ -484,7 +485,7 @@ int main()
                                     PageIndexSwap = pageWithLeastAccessed;
                                 }
                                 //LRU
-                                if(swapRules == 3){
+                                if(choice== 3){
                                     int pageWithLeastAccessed = 0;
                                     for(int i = 0; i < 20; i++){
                                         if(physicalPages[i].visited < physicalPages[pageWithLeastAccessed].visited){
@@ -542,8 +543,8 @@ int main()
                             
                         }
                         else{
-                            Processes[i].pages[VA].visited = accessTimeStamp;
-                            physicalPages[Processes[i].pages[VA].physicalAd].visited =
+                            Processes[i].pages[vAddress].visited = accessTimeStamp;
+                            physicalPages[Processes[i].pages[vAddress].physicalAd].visited =
                             accessTimeStamp;
                             accessTimeStamp++;
                             break;
@@ -562,25 +563,25 @@ int main()
             for (int i = 0; i < 50; i++)
             {
                 if (Processes[i].PID == PID
-                    && Processes[i].pages[VA].allocated == true)
+                    && Processes[i].pages[vAddress].allocated == true)
                 {
-                    Processes[i].pages[VA].allocated = false;
-                    Processes[i].pages[VA].isEmpty = true;
-                    physicalPages[Processes[i].pages[VA].physicalAd].allocated =
+                    Processes[i].pages[vAddress].allocated = false;
+                    Processes[i].pages[vAddress].isEmpty = true;
+                    physicalPages[Processes[i].pages[vAddress].physicalAd].allocated =
                     false;
-                    physicalPages[Processes[i].pages[VA].physicalAd].virtualAd =
+                    physicalPages[Processes[i].pages[vAddress].physicalAd].virtualAd =
                     0;
-                    physicalPages[Processes[i].pages[VA].physicalAd].dirty =
+                    physicalPages[Processes[i].pages[vAddress].physicalAd].dirty =
                     false;
-                    physicalPages[Processes[i].pages[VA].physicalAd].visited =
+                    physicalPages[Processes[i].pages[vAddress].physicalAd].visited =
                     0;
-                    physicalPages[Processes[i].pages[VA].physicalAd].pID =
+                    physicalPages[Processes[i].pages[vAddress].physicalAd].pID =
                     0;
                     
                     break;
                 }
                 
-                else if(Processes[i].PID == PID && !Processes[i].pages[VA].allocated){
+                else if(Processes[i].PID == PID && !Processes[i].pages[vAddress].allocated){
                     
                     
                     for (int killIndex = 0; killIndex < 20; killIndex++){
@@ -633,7 +634,7 @@ int main()
             for (int i = 0; i < 50; i++)
             {
                 if (Processes[i].PID == PID
-                    && Processes[i].pages[VA].allocated == true)
+                    && Processes[i].pages[vAddress].allocated == true)
                 {
                     
                     Processes[i].isCreated = false;
@@ -755,7 +756,7 @@ bool pT::write(){
     dirty = true;
     return dirty;
 }
-bool pT::setFree(){
+bool pT::Free(){
     allocated = false;
     return allocated;
 }
