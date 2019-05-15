@@ -1,0 +1,692 @@
+The system is: Windows - 10.0.17134 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: C:/MinGW/bin/gcc.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+
+The C compiler identification is GNU, found in "C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/3.14.2/CompilerIdC/a.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: C:/MinGW/bin/g++.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+
+The CXX compiler identification is GNU, found in "C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/3.14.2/CompilerIdCXX/a.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_2e7ee/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_2e7ee.dir\build.make CMakeFiles/cmTC_2e7ee.dir/build
+mingw32-make.exe[1]: Entering directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2e7ee.dir/testCCompiler.c.obj
+C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_2e7ee.dir\testCCompiler.c.obj   -c C:\Users\Enrique\CLionProjects\untitled1\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_2e7ee.exe
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_2e7ee.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_2e7ee.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_2e7ee.dir/objects.a @CMakeFiles\cmTC_2e7ee.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_2e7ee.dir/objects.a -Wl,--no-whole-archive  -o cmTC_2e7ee.exe -Wl,--out-implib,libcmTC_2e7ee.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_2e7ee.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_97310/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_97310.dir\build.make CMakeFiles/cmTC_97310.dir/build
+mingw32-make.exe[1]: Entering directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_97310.dir/CMakeCCompilerABI.c.obj
+C:\MinGW\bin\gcc.exe   -v -o CMakeFiles\cmTC_97310.dir\CMakeCCompilerABI.c.obj   -c "C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\share\cmake-3.14\Modules\CMakeCCompilerABI.c"
+Using built-in specs.
+COLLECT_GCC=C:\MinGW\bin\gcc.exe
+COLLECT_LTO_WRAPPER=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/lto-wrapper.exe
+Target: mingw32
+Configured with: ../gcc-4.6.2/configure --enable-languages=c,c++,ada,fortran,objc,obj-c++ --disable-sjlj-exceptions --with-dwarf2 --enable-shared --enable-libgomp --disable-win32-registry --enable-libstdcxx-debug --enable-version-specific-runtime-libs --build=mingw32 --prefix=/mingw
+Thread model: win32
+gcc version 4.6.2 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_97310.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=i386' '-march=i386'
+ c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/cc1.exe -quiet -v -iprefix c:\mingw\bin\../lib/gcc/mingw32/4.6.2/ C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\share\cmake-3.14\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=i386 -march=i386 -auxbase-strip CMakeFiles\cmTC_97310.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\Enrique\AppData\Local\Temp\ccI7HISC.s
+GNU C (GCC) version 4.6.2 (mingw32)
+	compiled by GNU C version 4.6.2, GMP version 5.0.1, MPFR version 2.4.1, MPC version 0.8.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/include"
+ignoring duplicate directory "/mingw/lib/gcc/mingw32/4.6.2/../../../../include"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../include"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/include-fixed"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/../../../../mingw32/include"
+ignoring duplicate directory "/mingw/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/include
+ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include
+ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/include-fixed
+ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../mingw32/include
+End of search list.
+GNU C (GCC) version 4.6.2 (mingw32)
+	compiled by GNU C version 4.6.2, GMP version 5.0.1, MPFR version 2.4.1, MPC version 0.8.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: c20aed7c018482d7b62efcd5dcab2a9d
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_97310.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=i386' '-march=i386'
+ c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/bin/as.exe -o CMakeFiles\cmTC_97310.dir\CMakeCCompilerABI.c.obj C:\Users\Enrique\AppData\Local\Temp\ccI7HISC.s
+COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/;c:/mingw/bin/../libexec/gcc/;c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/bin/
+LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/4.6.2/;c:/mingw/bin/../lib/gcc/;c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib/;c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../;/mingw/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_97310.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=i386' '-march=i386'
+Linking C executable cmTC_97310.exe
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_97310.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_97310.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_97310.dir/objects.a @CMakeFiles\cmTC_97310.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_97310.dir/objects.a -Wl,--no-whole-archive  -o cmTC_97310.exe -Wl,--out-implib,libcmTC_97310.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+Using built-in specs.
+COLLECT_GCC=C:\MinGW\bin\gcc.exe
+COLLECT_LTO_WRAPPER=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/lto-wrapper.exe
+Target: mingw32
+Configured with: ../gcc-4.6.2/configure --enable-languages=c,c++,ada,fortran,objc,obj-c++ --disable-sjlj-exceptions --with-dwarf2 --enable-shared --enable-libgomp --disable-win32-registry --enable-libstdcxx-debug --enable-version-specific-runtime-libs --build=mingw32 --prefix=/mingw
+Thread model: win32
+gcc version 4.6.2 (GCC) 
+COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/;c:/mingw/bin/../libexec/gcc/;c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/bin/
+LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/4.6.2/;c:/mingw/bin/../lib/gcc/;c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib/;c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../;/mingw/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_97310.exe' '-mtune=i386' '-march=i386'
+ c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/collect2.exe -Bdynamic -o cmTC_97310.exe c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../crt2.o c:/mingw/bin/../lib/gcc/mingw32/4.6.2/crtbegin.o -Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2 -Lc:/mingw/bin/../lib/gcc -Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib -Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../.. -L/mingw/lib --whole-archive CMakeFiles\cmTC_97310.dir/objects.a --no-whole-archive --out-implib libcmTC_97310.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc_eh -lgcc -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_eh -lgcc -lmoldname -lmingwex -lmsvcrt c:/mingw/bin/../lib/gcc/mingw32/4.6.2/crtend.o
+mingw32-make.exe[1]: Leaving directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/include]
+    add: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../include]
+    add: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/include-fixed]
+    add: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/include]
+  end of search list found
+  collapse include dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/include] ==> [C:/MinGW/lib/gcc/mingw32/4.6.2/include]
+  collapse include dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../include] ==> [C:/MinGW/include]
+  collapse include dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/include-fixed] ==> [C:/MinGW/lib/gcc/mingw32/4.6.2/include-fixed]
+  collapse include dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/include] ==> [C:/MinGW/mingw32/include]
+  implicit include dirs: [C:/MinGW/lib/gcc/mingw32/4.6.2/include;C:/MinGW/include;C:/MinGW/lib/gcc/mingw32/4.6.2/include-fixed;C:/MinGW/mingw32/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_97310/fast ]
+  ignore line: [C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_97310.dir\build.make CMakeFiles/cmTC_97310.dir/build]
+  ignore line: [mingw32-make.exe[1]: Entering directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_97310.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [C:\MinGW\bin\gcc.exe   -v -o CMakeFiles\cmTC_97310.dir\CMakeCCompilerABI.c.obj   -c "C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\share\cmake-3.14\Modules\CMakeCCompilerABI.c"]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=C:\MinGW\bin\gcc.exe]
+  ignore line: [COLLECT_LTO_WRAPPER=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/lto-wrapper.exe]
+  ignore line: [Target: mingw32]
+  ignore line: [Configured with: ../gcc-4.6.2/configure --enable-languages=c,c++,ada,fortran,objc,obj-c++ --disable-sjlj-exceptions --with-dwarf2 --enable-shared --enable-libgomp --disable-win32-registry --enable-libstdcxx-debug --enable-version-specific-runtime-libs --build=mingw32 --prefix=/mingw]
+  ignore line: [Thread model: win32]
+  ignore line: [gcc version 4.6.2 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_97310.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=i386' '-march=i386']
+  ignore line: [ c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/cc1.exe -quiet -v -iprefix c:\mingw\bin\../lib/gcc/mingw32/4.6.2/ C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\share\cmake-3.14\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=i386 -march=i386 -auxbase-strip CMakeFiles\cmTC_97310.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\Enrique\AppData\Local\Temp\ccI7HISC.s]
+  ignore line: [GNU C (GCC) version 4.6.2 (mingw32)]
+  ignore line: [	compiled by GNU C version 4.6.2, GMP version 5.0.1, MPFR version 2.4.1, MPC version 0.8.1]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/include"]
+  ignore line: [ignoring duplicate directory "/mingw/lib/gcc/mingw32/4.6.2/../../../../include"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../include"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/include-fixed"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/../../../../mingw32/include"]
+  ignore line: [ignoring duplicate directory "/mingw/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/include]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/include-fixed]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../mingw32/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C (GCC) version 4.6.2 (mingw32)]
+  ignore line: [	compiled by GNU C version 4.6.2, GMP version 5.0.1, MPFR version 2.4.1, MPC version 0.8.1]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: c20aed7c018482d7b62efcd5dcab2a9d]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_97310.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=i386' '-march=i386']
+  ignore line: [ c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/bin/as.exe -o CMakeFiles\cmTC_97310.dir\CMakeCCompilerABI.c.obj C:\Users\Enrique\AppData\Local\Temp\ccI7HISC.s]
+  ignore line: [COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/]
+  ignore line: [c:/mingw/bin/../libexec/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/bin/]
+  ignore line: [LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/4.6.2/]
+  ignore line: [c:/mingw/bin/../lib/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../]
+  ignore line: [/mingw/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_97310.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=i386' '-march=i386']
+  ignore line: [Linking C executable cmTC_97310.exe]
+  ignore line: ["C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_97310.dir\link.txt --verbose=1]
+  ignore line: ["C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_97310.dir/objects.a]
+  ignore line: [C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_97310.dir/objects.a @CMakeFiles\cmTC_97310.dir\objects1.rsp]
+  ignore line: [C:\MinGW\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_97310.dir/objects.a -Wl,--no-whole-archive  -o cmTC_97310.exe -Wl,--out-implib,libcmTC_97310.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=C:\MinGW\bin\gcc.exe]
+  ignore line: [COLLECT_LTO_WRAPPER=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/lto-wrapper.exe]
+  ignore line: [Target: mingw32]
+  ignore line: [Configured with: ../gcc-4.6.2/configure --enable-languages=c,c++,ada,fortran,objc,obj-c++ --disable-sjlj-exceptions --with-dwarf2 --enable-shared --enable-libgomp --disable-win32-registry --enable-libstdcxx-debug --enable-version-specific-runtime-libs --build=mingw32 --prefix=/mingw]
+  ignore line: [Thread model: win32]
+  ignore line: [gcc version 4.6.2 (GCC) ]
+  ignore line: [COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/]
+  ignore line: [c:/mingw/bin/../libexec/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/bin/]
+  ignore line: [LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/4.6.2/]
+  ignore line: [c:/mingw/bin/../lib/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../]
+  ignore line: [/mingw/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_97310.exe' '-mtune=i386' '-march=i386']
+  link line: [ c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/collect2.exe -Bdynamic -o cmTC_97310.exe c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../crt2.o c:/mingw/bin/../lib/gcc/mingw32/4.6.2/crtbegin.o -Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2 -Lc:/mingw/bin/../lib/gcc -Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib -Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../.. -L/mingw/lib --whole-archive CMakeFiles\cmTC_97310.dir/objects.a --no-whole-archive --out-implib libcmTC_97310.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc_eh -lgcc -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_eh -lgcc -lmoldname -lmingwex -lmsvcrt c:/mingw/bin/../lib/gcc/mingw32/4.6.2/crtend.o]
+    arg [c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/collect2.exe] ==> ignore
+    arg [-Bdynamic] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_97310.exe] ==> ignore
+    arg [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../crt2.o] ==> ignore
+    arg [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/crtbegin.o] ==> ignore
+    arg [-Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2] ==> dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2]
+    arg [-Lc:/mingw/bin/../lib/gcc] ==> dir [c:/mingw/bin/../lib/gcc]
+    arg [-Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib] ==> dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib]
+    arg [-Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../..] ==> dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../..]
+    arg [-L/mingw/lib] ==> dir [/mingw/lib]
+    arg [--whole-archive] ==> ignore
+    arg [CMakeFiles\cmTC_97310.dir/objects.a] ==> ignore
+    arg [--no-whole-archive] ==> ignore
+    arg [--out-implib] ==> ignore
+    arg [libcmTC_97310.dll.a] ==> ignore
+    arg [--major-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [--minor-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lgcc_eh] ==> lib [gcc_eh]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lmoldname] ==> lib [moldname]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lmsvcrt] ==> lib [msvcrt]
+    arg [-ladvapi32] ==> lib [advapi32]
+    arg [-lshell32] ==> lib [shell32]
+    arg [-luser32] ==> lib [user32]
+    arg [-lkernel32] ==> lib [kernel32]
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lgcc_eh] ==> lib [gcc_eh]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lmoldname] ==> lib [moldname]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lmsvcrt] ==> lib [msvcrt]
+    arg [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/crtend.o] ==> ignore
+  remove lib [gcc_eh]
+  remove lib [msvcrt]
+  remove lib [gcc_eh]
+  remove lib [msvcrt]
+  collapse library dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2] ==> [C:/MinGW/lib/gcc/mingw32/4.6.2]
+  collapse library dir [c:/mingw/bin/../lib/gcc] ==> [C:/MinGW/lib/gcc]
+  collapse library dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib] ==> [C:/MinGW/mingw32/lib]
+  collapse library dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../..] ==> [C:/MinGW/lib]
+  collapse library dir [/mingw/lib] ==> [/MinGW/lib]
+  implicit libs: [mingw32;gcc;moldname;mingwex;advapi32;shell32;user32;kernel32;mingw32;gcc;moldname;mingwex]
+  implicit dirs: [C:/MinGW/lib/gcc/mingw32/4.6.2;C:/MinGW/lib/gcc;C:/MinGW/mingw32/lib;C:/MinGW/lib;/MinGW/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c1x] compiler features compiled with the following output:
+Change Dir: C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_0daa7/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_0daa7.dir\build.make CMakeFiles/cmTC_0daa7.dir/build
+mingw32-make.exe[1]: Entering directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0daa7.dir/feature_tests.c.obj
+C:\MinGW\bin\gcc.exe   -std=c1x -o CMakeFiles\cmTC_0daa7.dir\feature_tests.c.obj   -c C:\Users\Enrique\CLionProjects\untitled1\cmake-build-debug\CMakeFiles\feature_tests.c
+Linking C executable cmTC_0daa7.exe
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_0daa7.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_0daa7.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_0daa7.dir/objects.a @CMakeFiles\cmTC_0daa7.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_0daa7.dir/objects.a -Wl,--no-whole-archive  -o cmTC_0daa7.exe -Wl,--out-implib,libcmTC_0daa7.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_0daa7.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_f78a0/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_f78a0.dir\build.make CMakeFiles/cmTC_f78a0.dir/build
+mingw32-make.exe[1]: Entering directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f78a0.dir/feature_tests.c.obj
+C:\MinGW\bin\gcc.exe   -std=c99 -o CMakeFiles\cmTC_f78a0.dir\feature_tests.c.obj   -c C:\Users\Enrique\CLionProjects\untitled1\cmake-build-debug\CMakeFiles\feature_tests.c
+Linking C executable cmTC_f78a0.exe
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_f78a0.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_f78a0.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_f78a0.dir/objects.a @CMakeFiles\cmTC_f78a0.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_f78a0.dir/objects.a -Wl,--no-whole-archive  -o cmTC_f78a0.exe -Wl,--out-implib,libcmTC_f78a0.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_f78a0.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_cac92/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_cac92.dir\build.make CMakeFiles/cmTC_cac92.dir/build
+mingw32-make.exe[1]: Entering directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cac92.dir/feature_tests.c.obj
+C:\MinGW\bin\gcc.exe   -std=c90 -o CMakeFiles\cmTC_cac92.dir\feature_tests.c.obj   -c C:\Users\Enrique\CLionProjects\untitled1\cmake-build-debug\CMakeFiles\feature_tests.c
+Linking C executable cmTC_cac92.exe
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_cac92.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_cac92.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_cac92.dir/objects.a @CMakeFiles\cmTC_cac92.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_cac92.dir/objects.a -Wl,--no-whole-archive  -o cmTC_cac92.exe -Wl,--out-implib,libcmTC_cac92.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_cac92.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the CXX compiler works passed with the following output:
+Change Dir: C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_3589e/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_3589e.dir\build.make CMakeFiles/cmTC_3589e.dir/build
+mingw32-make.exe[1]: Entering directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3589e.dir/testCXXCompiler.cxx.obj
+C:\MinGW\bin\g++.exe     -o CMakeFiles\cmTC_3589e.dir\testCXXCompiler.cxx.obj -c C:\Users\Enrique\CLionProjects\untitled1\cmake-build-debug\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+Linking CXX executable cmTC_3589e.exe
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_3589e.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_3589e.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_3589e.dir/objects.a @CMakeFiles\cmTC_3589e.dir\objects1.rsp
+C:\MinGW\bin\g++.exe      -Wl,--whole-archive CMakeFiles\cmTC_3589e.dir/objects.a -Wl,--no-whole-archive  -o cmTC_3589e.exe -Wl,--out-implib,libcmTC_3589e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_3589e.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_60d31/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_60d31.dir\build.make CMakeFiles/cmTC_60d31.dir/build
+mingw32-make.exe[1]: Entering directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_60d31.dir/CMakeCXXCompilerABI.cpp.obj
+C:\MinGW\bin\g++.exe    -v -o CMakeFiles\cmTC_60d31.dir\CMakeCXXCompilerABI.cpp.obj -c "C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\share\cmake-3.14\Modules\CMakeCXXCompilerABI.cpp"
+Using built-in specs.
+COLLECT_GCC=C:\MinGW\bin\g++.exe
+COLLECT_LTO_WRAPPER=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/lto-wrapper.exe
+Target: mingw32
+Configured with: ../gcc-4.6.2/configure --enable-languages=c,c++,ada,fortran,objc,obj-c++ --disable-sjlj-exceptions --with-dwarf2 --enable-shared --enable-libgomp --disable-win32-registry --enable-libstdcxx-debug --enable-version-specific-runtime-libs --build=mingw32 --prefix=/mingw
+Thread model: win32
+gcc version 4.6.2 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_60d31.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=i386' '-march=i386'
+ c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/cc1plus.exe -quiet -v -iprefix c:\mingw\bin\../lib/gcc/mingw32/4.6.2/ C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\share\cmake-3.14\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=i386 -march=i386 -auxbase-strip CMakeFiles\cmTC_60d31.dir\CMakeCXXCompilerABI.cpp.obj -version -o C:\Users\Enrique\AppData\Local\Temp\ccXnbhj9.s
+GNU C++ (GCC) version 4.6.2 (mingw32)
+	compiled by GNU C version 4.6.2, GMP version 5.0.1, MPFR version 2.4.1, MPC version 0.8.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/include/c++"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/include/c++/mingw32"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/include/c++/backward"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/include"
+ignoring duplicate directory "/mingw/lib/gcc/mingw32/4.6.2/../../../../include"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../include"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/include-fixed"
+ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/../../../../mingw32/include"
+ignoring duplicate directory "/mingw/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/include/c++
+ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/include/c++/mingw32
+ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/include/c++/backward
+ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/include
+ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include
+ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/include-fixed
+ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../mingw32/include
+End of search list.
+GNU C++ (GCC) version 4.6.2 (mingw32)
+	compiled by GNU C version 4.6.2, GMP version 5.0.1, MPFR version 2.4.1, MPC version 0.8.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: f7eb4168c2cf10318cc29da8d23b7f3c
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_60d31.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=i386' '-march=i386'
+ c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/bin/as.exe -o CMakeFiles\cmTC_60d31.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\Enrique\AppData\Local\Temp\ccXnbhj9.s
+COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/;c:/mingw/bin/../libexec/gcc/;c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/bin/
+LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/4.6.2/;c:/mingw/bin/../lib/gcc/;c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib/;c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../;/mingw/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_60d31.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=i386' '-march=i386'
+Linking CXX executable cmTC_60d31.exe
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_60d31.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_60d31.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_60d31.dir/objects.a @CMakeFiles\cmTC_60d31.dir\objects1.rsp
+C:\MinGW\bin\g++.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_60d31.dir/objects.a -Wl,--no-whole-archive  -o cmTC_60d31.exe -Wl,--out-implib,libcmTC_60d31.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+Using built-in specs.
+COLLECT_GCC=C:\MinGW\bin\g++.exe
+COLLECT_LTO_WRAPPER=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/lto-wrapper.exe
+Target: mingw32
+Configured with: ../gcc-4.6.2/configure --enable-languages=c,c++,ada,fortran,objc,obj-c++ --disable-sjlj-exceptions --with-dwarf2 --enable-shared --enable-libgomp --disable-win32-registry --enable-libstdcxx-debug --enable-version-specific-runtime-libs --build=mingw32 --prefix=/mingw
+Thread model: win32
+gcc version 4.6.2 (GCC) 
+COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/;c:/mingw/bin/../libexec/gcc/;c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/bin/
+LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/4.6.2/;c:/mingw/bin/../lib/gcc/;c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib/;c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../;/mingw/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_60d31.exe' '-shared-libgcc' '-mtune=i386' '-march=i386'
+ c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/collect2.exe -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_60d31.exe c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../crt2.o c:/mingw/bin/../lib/gcc/mingw32/4.6.2/crtbegin.o -Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2 -Lc:/mingw/bin/../lib/gcc -Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib -Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../.. -L/mingw/lib --whole-archive CMakeFiles\cmTC_60d31.dir/objects.a --no-whole-archive --out-implib libcmTC_60d31.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt c:/mingw/bin/../lib/gcc/mingw32/4.6.2/crtend.o
+mingw32-make.exe[1]: Leaving directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/include/c++]
+    add: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/include/c++/mingw32]
+    add: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/include/c++/backward]
+    add: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/include]
+    add: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../include]
+    add: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/include-fixed]
+    add: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/include]
+  end of search list found
+  collapse include dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/include/c++] ==> [C:/MinGW/lib/gcc/mingw32/4.6.2/include/c++]
+  collapse include dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/include/c++/mingw32] ==> [C:/MinGW/lib/gcc/mingw32/4.6.2/include/c++/mingw32]
+  collapse include dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/include/c++/backward] ==> [C:/MinGW/lib/gcc/mingw32/4.6.2/include/c++/backward]
+  collapse include dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/include] ==> [C:/MinGW/lib/gcc/mingw32/4.6.2/include]
+  collapse include dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../include] ==> [C:/MinGW/include]
+  collapse include dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/include-fixed] ==> [C:/MinGW/lib/gcc/mingw32/4.6.2/include-fixed]
+  collapse include dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/include] ==> [C:/MinGW/mingw32/include]
+  implicit include dirs: [C:/MinGW/lib/gcc/mingw32/4.6.2/include/c++;C:/MinGW/lib/gcc/mingw32/4.6.2/include/c++/mingw32;C:/MinGW/lib/gcc/mingw32/4.6.2/include/c++/backward;C:/MinGW/lib/gcc/mingw32/4.6.2/include;C:/MinGW/include;C:/MinGW/lib/gcc/mingw32/4.6.2/include-fixed;C:/MinGW/mingw32/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_60d31/fast ]
+  ignore line: [C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_60d31.dir\build.make CMakeFiles/cmTC_60d31.dir/build]
+  ignore line: [mingw32-make.exe[1]: Entering directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_60d31.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [C:\MinGW\bin\g++.exe    -v -o CMakeFiles\cmTC_60d31.dir\CMakeCXXCompilerABI.cpp.obj -c "C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\share\cmake-3.14\Modules\CMakeCXXCompilerABI.cpp"]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=C:\MinGW\bin\g++.exe]
+  ignore line: [COLLECT_LTO_WRAPPER=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/lto-wrapper.exe]
+  ignore line: [Target: mingw32]
+  ignore line: [Configured with: ../gcc-4.6.2/configure --enable-languages=c,c++,ada,fortran,objc,obj-c++ --disable-sjlj-exceptions --with-dwarf2 --enable-shared --enable-libgomp --disable-win32-registry --enable-libstdcxx-debug --enable-version-specific-runtime-libs --build=mingw32 --prefix=/mingw]
+  ignore line: [Thread model: win32]
+  ignore line: [gcc version 4.6.2 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_60d31.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=i386' '-march=i386']
+  ignore line: [ c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/cc1plus.exe -quiet -v -iprefix c:\mingw\bin\../lib/gcc/mingw32/4.6.2/ C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\share\cmake-3.14\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=i386 -march=i386 -auxbase-strip CMakeFiles\cmTC_60d31.dir\CMakeCXXCompilerABI.cpp.obj -version -o C:\Users\Enrique\AppData\Local\Temp\ccXnbhj9.s]
+  ignore line: [GNU C++ (GCC) version 4.6.2 (mingw32)]
+  ignore line: [	compiled by GNU C version 4.6.2, GMP version 5.0.1, MPFR version 2.4.1, MPC version 0.8.1]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/include/c++"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/include/c++/mingw32"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/include/c++/backward"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/include"]
+  ignore line: [ignoring duplicate directory "/mingw/lib/gcc/mingw32/4.6.2/../../../../include"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../include"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/include-fixed"]
+  ignore line: [ignoring duplicate directory "c:/mingw/lib/gcc/../../lib/gcc/mingw32/4.6.2/../../../../mingw32/include"]
+  ignore line: [ignoring duplicate directory "/mingw/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/include/c++]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/include/c++/mingw32]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/include/c++/backward]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/include]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../include]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/include-fixed]
+  ignore line: [ c:\mingw\bin\../lib/gcc/mingw32/4.6.2/../../../../mingw32/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++ (GCC) version 4.6.2 (mingw32)]
+  ignore line: [	compiled by GNU C version 4.6.2, GMP version 5.0.1, MPFR version 2.4.1, MPC version 0.8.1]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: f7eb4168c2cf10318cc29da8d23b7f3c]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_60d31.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=i386' '-march=i386']
+  ignore line: [ c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/bin/as.exe -o CMakeFiles\cmTC_60d31.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\Enrique\AppData\Local\Temp\ccXnbhj9.s]
+  ignore line: [COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/]
+  ignore line: [c:/mingw/bin/../libexec/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/bin/]
+  ignore line: [LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/4.6.2/]
+  ignore line: [c:/mingw/bin/../lib/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../]
+  ignore line: [/mingw/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_60d31.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=i386' '-march=i386']
+  ignore line: [Linking CXX executable cmTC_60d31.exe]
+  ignore line: ["C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_60d31.dir\link.txt --verbose=1]
+  ignore line: ["C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_60d31.dir/objects.a]
+  ignore line: [C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_60d31.dir/objects.a @CMakeFiles\cmTC_60d31.dir\objects1.rsp]
+  ignore line: [C:\MinGW\bin\g++.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_60d31.dir/objects.a -Wl,--no-whole-archive  -o cmTC_60d31.exe -Wl,--out-implib,libcmTC_60d31.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=C:\MinGW\bin\g++.exe]
+  ignore line: [COLLECT_LTO_WRAPPER=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/lto-wrapper.exe]
+  ignore line: [Target: mingw32]
+  ignore line: [Configured with: ../gcc-4.6.2/configure --enable-languages=c,c++,ada,fortran,objc,obj-c++ --disable-sjlj-exceptions --with-dwarf2 --enable-shared --enable-libgomp --disable-win32-registry --enable-libstdcxx-debug --enable-version-specific-runtime-libs --build=mingw32 --prefix=/mingw]
+  ignore line: [Thread model: win32]
+  ignore line: [gcc version 4.6.2 (GCC) ]
+  ignore line: [COMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/]
+  ignore line: [c:/mingw/bin/../libexec/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/bin/]
+  ignore line: [LIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/4.6.2/]
+  ignore line: [c:/mingw/bin/../lib/gcc/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib/]
+  ignore line: [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../]
+  ignore line: [/mingw/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_60d31.exe' '-shared-libgcc' '-mtune=i386' '-march=i386']
+  link line: [ c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/collect2.exe -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_60d31.exe c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../crt2.o c:/mingw/bin/../lib/gcc/mingw32/4.6.2/crtbegin.o -Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2 -Lc:/mingw/bin/../lib/gcc -Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib -Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../.. -L/mingw/lib --whole-archive CMakeFiles\cmTC_60d31.dir/objects.a --no-whole-archive --out-implib libcmTC_60d31.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt c:/mingw/bin/../lib/gcc/mingw32/4.6.2/crtend.o]
+    arg [c:/mingw/bin/../libexec/gcc/mingw32/4.6.2/collect2.exe] ==> ignore
+    arg [-Bdynamic] ==> ignore
+    arg [-u] ==> ignore
+    arg [___register_frame_info] ==> ignore
+    arg [-u] ==> ignore
+    arg [___deregister_frame_info] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_60d31.exe] ==> ignore
+    arg [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../crt2.o] ==> ignore
+    arg [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/crtbegin.o] ==> ignore
+    arg [-Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2] ==> dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2]
+    arg [-Lc:/mingw/bin/../lib/gcc] ==> dir [c:/mingw/bin/../lib/gcc]
+    arg [-Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib] ==> dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib]
+    arg [-Lc:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../..] ==> dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../..]
+    arg [-L/mingw/lib] ==> dir [/mingw/lib]
+    arg [--whole-archive] ==> ignore
+    arg [CMakeFiles\cmTC_60d31.dir/objects.a] ==> ignore
+    arg [--no-whole-archive] ==> ignore
+    arg [--out-implib] ==> ignore
+    arg [libcmTC_60d31.dll.a] ==> ignore
+    arg [--major-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [--minor-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lmoldname] ==> lib [moldname]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lmsvcrt] ==> lib [msvcrt]
+    arg [-ladvapi32] ==> lib [advapi32]
+    arg [-lshell32] ==> lib [shell32]
+    arg [-luser32] ==> lib [user32]
+    arg [-lkernel32] ==> lib [kernel32]
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lmoldname] ==> lib [moldname]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lmsvcrt] ==> lib [msvcrt]
+    arg [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/crtend.o] ==> ignore
+  remove lib [msvcrt]
+  remove lib [msvcrt]
+  collapse library dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2] ==> [C:/MinGW/lib/gcc/mingw32/4.6.2]
+  collapse library dir [c:/mingw/bin/../lib/gcc] ==> [C:/MinGW/lib/gcc]
+  collapse library dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../../../mingw32/lib] ==> [C:/MinGW/mingw32/lib]
+  collapse library dir [c:/mingw/bin/../lib/gcc/mingw32/4.6.2/../../..] ==> [C:/MinGW/lib]
+  collapse library dir [/mingw/lib] ==> [/MinGW/lib]
+  implicit libs: [stdc++;mingw32;gcc_s;gcc;moldname;mingwex;advapi32;shell32;user32;kernel32;mingw32;gcc_s;gcc;moldname;mingwex]
+  implicit dirs: [C:/MinGW/lib/gcc/mingw32/4.6.2;C:/MinGW/lib/gcc;C:/MinGW/mingw32/lib;C:/MinGW/lib;/MinGW/lib]
+  implicit fwks: []
+
+
+
+
+Detecting CXX [-std=c++0x] compiler features compiled with the following output:
+Change Dir: C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_2948f/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_2948f.dir\build.make CMakeFiles/cmTC_2948f.dir/build
+mingw32-make.exe[1]: Entering directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2948f.dir/feature_tests.cxx.obj
+C:\MinGW\bin\g++.exe    -std=c++0x -o CMakeFiles\cmTC_2948f.dir\feature_tests.cxx.obj -c C:\Users\Enrique\CLionProjects\untitled1\cmake-build-debug\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_2948f.exe
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_2948f.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_2948f.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_2948f.dir/objects.a @CMakeFiles\cmTC_2948f.dir\objects1.rsp
+C:\MinGW\bin\g++.exe      -Wl,--whole-archive CMakeFiles\cmTC_2948f.dir/objects.a -Wl,--no-whole-archive  -o cmTC_2948f.exe -Wl,--out-implib,libcmTC_2948f.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_2948f.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:0cxx_alias_templates
+    Feature record: CXX_FEATURE:0cxx_alignas
+    Feature record: CXX_FEATURE:0cxx_alignof
+    Feature record: CXX_FEATURE:0cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:0cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:0cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:0cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:0cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:0cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:0cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:0cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:0cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:0cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++98] compiler features compiled with the following output:
+Change Dir: C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_81b04/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_81b04.dir\build.make CMakeFiles/cmTC_81b04.dir/build
+mingw32-make.exe[1]: Entering directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_81b04.dir/feature_tests.cxx.obj
+C:\MinGW\bin\g++.exe    -std=c++98 -o CMakeFiles\cmTC_81b04.dir\feature_tests.cxx.obj -c C:\Users\Enrique\CLionProjects\untitled1\cmake-build-debug\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_81b04.exe
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_81b04.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_81b04.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_81b04.dir/objects.a @CMakeFiles\cmTC_81b04.dir\objects1.rsp
+C:\MinGW\bin\g++.exe      -Wl,--whole-archive CMakeFiles\cmTC_81b04.dir/objects.a -Wl,--no-whole-archive  -o cmTC_81b04.exe -Wl,--out-implib,libcmTC_81b04.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_81b04.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory `C:/Users/Enrique/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:0cxx_alias_templates
+    Feature record: CXX_FEATURE:0cxx_alignas
+    Feature record: CXX_FEATURE:0cxx_alignof
+    Feature record: CXX_FEATURE:0cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:0cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:0cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:0cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:0cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:0cxx_default_function_template_args
+    Feature record: CXX_FEATURE:0cxx_defaulted_functions
+    Feature record: CXX_FEATURE:0cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:0cxx_delegating_constructors
+    Feature record: CXX_FEATURE:0cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:0cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:0cxx_explicit_conversions
+    Feature record: CXX_FEATURE:0cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:0cxx_extern_templates
+    Feature record: CXX_FEATURE:0cxx_final
+    Feature record: CXX_FEATURE:0cxx_func_identifier
+    Feature record: CXX_FEATURE:0cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:0cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:0cxx_inline_namespaces
+    Feature record: CXX_FEATURE:0cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:0cxx_local_type_template_args
+    Feature record: CXX_FEATURE:0cxx_long_long_type
+    Feature record: CXX_FEATURE:0cxx_noexcept
+    Feature record: CXX_FEATURE:0cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:0cxx_nullptr
+    Feature record: CXX_FEATURE:0cxx_override
+    Feature record: CXX_FEATURE:0cxx_range_for
+    Feature record: CXX_FEATURE:0cxx_raw_string_literals
+    Feature record: CXX_FEATURE:0cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:0cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:0cxx_rvalue_references
+    Feature record: CXX_FEATURE:0cxx_sizeof_member
+    Feature record: CXX_FEATURE:0cxx_static_assert
+    Feature record: CXX_FEATURE:0cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:0cxx_trailing_return_types
+    Feature record: CXX_FEATURE:0cxx_unicode_literals
+    Feature record: CXX_FEATURE:0cxx_uniform_initialization
+    Feature record: CXX_FEATURE:0cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:0cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:0cxx_variadic_macros
+    Feature record: CXX_FEATURE:0cxx_variadic_templates
