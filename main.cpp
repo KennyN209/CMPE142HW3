@@ -246,7 +246,7 @@ int main()
                             }
                         }
                         
-                        for(int killSwapIndex = 0; killSwapIndex < 40; killSwapIndex++){
+                        for(int killSwapIndex = 0; killSwapIndex < 50; killSwapIndex++){
                             
                             if(swapped[killSwapIndex].pID == PID){
                                 swapped[killSwapIndex].allocated = false;
@@ -267,12 +267,12 @@ int main()
                     
                     else if(Processes[i].pages[vAddress].allocated && Processes[i].pages[vAddress].isSwapped){
                         
-                        for(pageFoundInSwap = 0; pageFoundInSwap < 40; pageFoundInSwap++){
+                        for(pageFoundInSwap = 0; pageFoundInSwap < 50; pageFoundInSwap++){
                             if(swapped[pageFoundInSwap].pID == PID && swapped[pageFoundInSwap].virtualAd == vAddress)break;
                         }
                         
                         
-                        while (swapped[swapIndex].allocated && swapIndex < 40)
+                        while (swapped[swapIndex].allocated && swapIndex < 50)
                         {
                             swapIndex++;
                         }
@@ -411,7 +411,7 @@ int main()
                                     slide[killIndex].pID = 0;
                                 }
                             }
-                            for(int killSwapIndex = 0; killSwapIndex < 40; killSwapIndex++){
+                            for(int killSwapIndex = 0; killSwapIndex < 50; killSwapIndex++){
                                 
                                 if(swapped[killSwapIndex].pID == PID){
                                     swapped[killSwapIndex].allocated = false;
@@ -431,11 +431,11 @@ int main()
                         
                         else if(Processes[i].pages[vAddress].allocated && Processes[i].pages[vAddress].isSwapped){
                             
-                            for(pageFoundInSwap = 0; pageFoundInSwap < 40; pageFoundInSwap++){
+                            for(pageFoundInSwap = 0; pageFoundInSwap < 50; pageFoundInSwap++){
                                 if(swapped[pageFoundInSwap].pID == PID && swapped[pageFoundInSwap].virtualAd == vAddress)break;
                             }
                             
-                            while (swapped[swapIndex].allocated && swapIndex < 40)
+                            while (swapped[swapIndex].allocated && swapIndex < 50)
                             {
                                 swapIndex++;
                             }
@@ -575,7 +575,7 @@ int main()
                             slide[killIndex].pID = 0;
                         }
                     }
-                    for(int killSwapIndex = 0; killSwapIndex < 40; killSwapIndex++){
+                    for(int killSwapIndex = 0; killSwapIndex < 50; killSwapIndex++){
                         
                         if(swapped[killSwapIndex].pID == PID){
                             swapped[killSwapIndex].allocated = false;
@@ -594,7 +594,7 @@ int main()
                 }
             }
             
-            for(int freeSwap = 0; freeSwap < 40; freeSwap++){
+            for(int freeSwap = 0; freeSwap < 50; freeSwap++){
                 if(swapped[freeSwap].pID==PID){
                     swapped[freeSwap].allocated = false;
                     swapped[freeSwap].isEmpty = true;
@@ -640,7 +640,7 @@ int main()
                 }
             }
             
-            for(int i = 0; i < 40; i++){
+            for(int i = 0; i < 50; i++){
                 if(swapped[i].pID == PID){
                     
                     swapped[i].allocated = false;
